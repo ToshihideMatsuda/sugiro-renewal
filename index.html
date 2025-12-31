@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新HPに向けて</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: #ffffff;
+            color: #333333;
+            line-height: 1.7;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .slides-container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* 矢印ボタン */
+        .arrow-btn {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            background: #f0f0f0;
+            border: 2px solid #cccccc;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #666666;
+            transition: all 0.2s;
+            z-index: 100;
+        }
+
+        .arrow-btn:hover {
+            background: #e0e0e0;
+            color: #333333;
+        }
+
+        .arrow-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .arrow-btn.prev {
+            left: 20px;
+        }
+
+        .arrow-btn.next {
+            right: 20px;
+        }
+
+        /* ページインジケーター */
+        .page-indicator {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #dddddd;
+            border: 2px solid #cccccc;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .dot.active {
+            background: #666666;
+            border-color: #666666;
+        }
+
+        .dot:hover {
+            background: #aaaaaa;
+        }
+
+        /* スライドエリア */
+        .slide {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 40px 100px;
+            width: 100%;
+            max-width: 700px;
+            max-height: calc(100vh - 80px);
+            overflow-y: auto;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .slide-content {
+            width: 100%;
+        }
+
+        /* スライドヘッダー */
+        .slide-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eeeeee;
+        }
+
+        .slide-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #333333;
+        }
+
+        .slide-subtitle {
+            font-size: 1rem;
+            color: #888888;
+            margin-top: 5px;
+        }
+
+        /* セクション */
+        .section {
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #333333;
+            padding-left: 12px;
+            border-left: 4px solid #888888;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        li {
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+            color: #444444;
+        }
+
+        li ul {
+            margin-top: 4px;
+            margin-bottom: 4px;
+        }
+
+        a {
+            color: #555555;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #333333;
+        }
+
+        /* ボックス */
+        .box {
+            padding: 12px 16px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-size: 0.95rem;
+            background: #f5f5f5;
+            border: 1px solid #e0e0e0;
+        }
+
+        .box.highlight {
+            background: #f0f0f0;
+            border-left: 4px solid #666666;
+        }
+
+        .link-button {
+            display: inline-block;
+            background: #666666;
+            color: #ffffff !important;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            margin-top: 8px;
+        }
+
+        .link-button:hover {
+            background: #555555;
+        }
+
+        /* 引用 */
+        blockquote {
+            background: #f8f8f8;
+            border-left: 3px solid #cccccc;
+            padding: 8px 12px;
+            margin: 6px 0;
+            border-radius: 0 4px 4px 0;
+            color: #777777;
+            font-size: 0.85rem;
+        }
+
+        /* メリット */
+        .benefit {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 8px 12px;
+            background: #fafafa;
+            border: 1px solid #eeeeee;
+            border-radius: 4px;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+        }
+
+        .benefit-icon {
+            color: #666666;
+            flex-shrink: 0;
+        }
+
+        /* 目次ボタン */
+        .toc-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .toc-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            background: #ffffff;
+            border: 2px solid #dddddd;
+            padding: 30px 40px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #333333;
+        }
+
+        .toc-btn:hover {
+            border-color: #999999;
+            background: #fafafa;
+        }
+
+        .toc-btn-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .note {
+            font-size: 0.85rem;
+            color: #888888;
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                padding: 30px 20px;
+                max-width: 100%;
+            }
+
+            .arrow-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .arrow-btn.prev {
+                left: 10px;
+            }
+
+            .arrow-btn.next {
+                right: 10px;
+            }
+
+            .toc-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .toc-btn {
+                padding: 20px 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slides-container">
+
+        <!-- 左矢印ボタン -->
+        <button class="arrow-btn prev" id="prevBtn" onclick="prevSlide()">◀</button>
+
+        <!-- 右矢印ボタン -->
+        <button class="arrow-btn next" id="nextBtn" onclick="nextSlide()">▶</button>
+
+        <!-- スライド1: タイトル -->
+        <div class="slide active" data-slide="1">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <h1 class="slide-title">新HPに向けて</h1>
+                    <p class="slide-subtitle">杉並勤労者山岳会 ホームページリニューアル計画</p>
+                    <p style="font-size: 0.75rem; color: #aaaaaa; margin-top: 10px;">HP/名簿係（代理） 松田敏秀</p>
+                </div>
+                <div class="toc-buttons">
+                    <a class="toc-btn" onclick="goToSlide(2)">
+                        <span class="toc-btn-text">ヤマカン編</span>
+                    </a>
+                    <a class="toc-btn" onclick="goToSlide(3)">
+                        <span class="toc-btn-text">名簿編</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- スライド2: ヤマカン編 -->
+        <div class="slide" data-slide="2">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <h2 class="slide-title">ヤマカン編</h2>
+                </div>
+
+                <div class="section">
+                    <h3>現行のヤマカンの最大の欠点</h3>
+                    <ul>
+                        <li>退会済みの会員が計画書を見れること
+                            <ul>
+                                <li>なぜならばユーザ管理をしていないから</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3>解決のために</h3>
+                    <ul>
+                        <li>ホームページ（WordPress）のユーザを活用</li>
+                        <li>ユーザのみが使える計画書投稿ポストを作成する</li>
+                        <li>退会済みの会員は、ホームページにログインできないから使えない</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3>でも、操作性が違うと使いづらい...</h3>
+                    <div class="box highlight">
+                        ご安心ください！<strong>完全互換</strong>にしました！操作は全く同じです。
+                    </div>
+                    <a href="https://sugiro.info/mp//計画書一覧/?mode=yamakan" class="link-button" target="_blank">
+                        計画書一覧（yamakan mode）→
+                    </a>
+                </div>
+
+                <div class="section">
+                    <h3>新ヤマカンにすると他にもいいことあり</h3>
+                    <div class="benefit"><span class="benefit-icon">・</span>全体でのパスワード配布不要（個人管理）</div>
+                    <div class="benefit"><span class="benefit-icon">・</span>プロフィール機能による入力補助</div>
+                    <div class="benefit"><span class="benefit-icon">・</span>個人に紐付け機能が作成できる（コメントされたらメールを送るとか）</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- スライド3: 名簿編 -->
+        <div class="slide" data-slide="3">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <h2 class="slide-title">名簿編</h2>
+                </div>
+
+                <div class="section">
+                    <h3>そもそも名簿ってなぜ必要？</h3>
+                    <ul>
+                        <li><strong>通常時:</strong> 計画書作成のため</li>
+                        <li><strong>事故時:</strong> 基金・警察・家族対応のため</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3>現在どんな管理</h3>
+                    4つも同じようなものが存在🤯
+                    <ul>
+                        <li><strong>通常時:</strong> 計画書作成のため
+                            <ul>
+                                <li><a href="https://www.sugiro.info/会員名簿/" target="_blank">会員名簿ページ</a>
+                                    <blockquote>後述のExcelの1シートのコピペ。誰でもできます。</blockquote>
+                                </li>
+                                <li><a href="https://sugiro.info/mp/会員名簿/" target="_blank">テスト用会員名簿ページ</a><span
+                                        class="note">（杉山さん作ver）</span></li>
+                            </ul>
+                        </li>
+                        <li><strong>事故時:</strong> 基金・警察・家族対応のため
+                            <ul>
+                                <li>Excel版の名簿<blockquote>現在は松田管理</blockquote>
+                                </li>
+                                <li><a href="https://sugiro.info/mp/管理用名簿一覧/" target="_blank">管理用名簿一覧ページ</a><span
+                                        class="note">（杉山さん作ver）</span>
+                                    <blockquote>アクセス可能: 小野、羽田、安江、後藤、小谷、岸田、新津、杉山、松田</blockquote>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="box"><span class="note">📢 松田の叫び</span><br>なんで同じようなものが４つも。カオス。。。無理ぽ</div>
+                </div>
+
+                <div class="section">
+                    <h3>新HPでは</h3>
+                    <ul>
+                        <li>杉山さん作の<a href="https://sugiro.info/mp/会員名簿/" target="_blank">テスト用会員名簿ページ</a>
+
+                            と<a href="https://sugiro.info/mp/管理用名簿一覧/"
+                                target="_blank">管理用名簿一覧ページ</a>は<strong>削除</strong></li>
+                    </ul>
+                    <div class="box highlight">
+                        <strong>新機能:</strong> Excel版の名簿のアップロード・ダウンロード機能<br>
+                        <span class="note">
+                            ・アップロード → 名簿係のみ実行可能<br>
+                            ・ダウンロード → 該当の係（現在9名）のみ
+                        </span>
+                    </div>
+                    <div class="box">
+                        <span class="note">📢 松田の叫び</span><br>
+                        完成したら名簿係は誰かに渡したい！<br>
+                        Excelの更新とアップロードだけ！簡単なPC操作ができたら誰でもできます！
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ページインジケーター -->
+        <div class="page-indicator">
+            <span class="dot active" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+            <span class="dot" onclick="goToSlide(3)"></span>
+        </div>
+
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 3;
+
+        function updateSlide() {
+            document.querySelectorAll('.slide').forEach(slide => slide.classList.remove('active'));
+            document.querySelector(`[data-slide="${currentSlide}"]`).classList.add('active');
+
+            document.querySelectorAll('.dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i + 1 === currentSlide);
+            });
+
+            document.getElementById('prevBtn').disabled = currentSlide === 1;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) { currentSlide++; updateSlide(); }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) { currentSlide--; updateSlide(); }
+        }
+
+        function goToSlide(n) {
+            currentSlide = n; updateSlide();
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            else if (e.key === 'ArrowLeft') prevSlide();
+        });
+
+        updateSlide();
+    </script>
+</body>
+
+</html>
