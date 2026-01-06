@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>新HPに向けて</title>
+    <title>ヤマカンについて</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -415,6 +415,21 @@
             display: block;
         }
 
+        /* 次回予告ボックス */
+        .next-topic-box {
+            margin-top: 30px;
+            padding: 16px 20px;
+            background: #f9f9f9;
+            border: 2px dashed #cccccc;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .next-topic-box p {
+            font-size: 0.9rem;
+            color: #666666;
+        }
+
         @media (max-width: 768px) {
             .slide {
                 padding: 30px 20px;
@@ -475,40 +490,40 @@
                     <a class="toc-btn" onclick="goToSlide(2)">
                         <span class="toc-btn-text">ヤマカン編</span>
                     </a>
-                    <a class="toc-btn" onclick="goToSlide(3)">
-                        <span class="toc-btn-text">名簿編</span>
-                    </a>
-                    <a class="toc-btn" onclick="goToSlide(4)">
-                        <span class="toc-btn-text">対応時期</span>
-                    </a>
                 </div>
             </div>
         </div>
 
-        <!-- スライド2: ヤマカン編 -->
+        <!-- スライド2: ヤマカンについて -->
         <div class="slide" data-slide="2">
             <div class="slide-content">
                 <div class="slide-header">
-                    <h2 class="slide-title">ヤマカン編</h2>
+                    <h2 class="slide-title">ヤマカンについて</h2>
                 </div>
 
                 <div class="section anim-item" data-anim="1">
-                    <h3>現行のヤマカンの最大の欠点</h3>
+                    <h3>現行のヤマカンの欠点</h3>
                     <ul>
-                        <li>退会済みの会員が計画書を見れること
+                        <li>退会済みの会員が計画書を見れる
                             <ul>
-                                <li>ユーザ管理機能がなく全員が同じパスワードを共有しているため</li>
+                                <li>ユーザ管理機能がなく全員が同じパスワードを共有している</li>
+
                             </ul>
                         </li>
+                        <li>サーバも10年以上使ってかなり老朽化...お爺さん👴</li>
                     </ul>
                 </div>
 
                 <div class="section anim-item" data-anim="2">
                     <h3>解決のために</h3>
                     <ul>
-                        <li>ホームページ（WordPress）のユーザを活用</li>
-                        <li>ユーザのみが使える計画書投稿ポストを作成する</li>
-                        <li>退会済みの会員は、ホームページにログインできないから使えない</li>
+                        <li>ホームページ（WordPress）のユーザを活用
+                            <ul>
+                                <li>ユーザのみが使える計画書投稿ポストを作成する</li>
+                                <li>退会済みの会員は、ホームページにログインできないから使えない</li>
+                            </ul>
+                        </li>
+                        <li>XServerがサーバ・OSを管理、WordPressも自動更新できる👨</li>
                     </ul>
                 </div>
 
@@ -519,6 +534,7 @@
                 <div class="section anim-item" data-anim="4">
                     <ul>
                         <li>ご安心ください！<strong>同じ画面</strong>にしました！操作は全く同じです。</li>
+                        <li>太郎さん（現ヤマカン管理者）と連携してデータ移行テスト中！<br>2万件の計画書データ移行を予定</li>
                     </ul>
                     <a href="https://sugiro.info/mp//計画書一覧/?mode=yamakan" class="link-button" target="_blank">
                         計画書一覧（yamakan mode）→
@@ -537,13 +553,34 @@
                         </ul>
                     </ul>
                 </div>
+
+                <!-- 詳細 -->
+                <div class="section anim-item" data-anim="6">
+                    <h3>対応時期</h3>
+                    <ul>
+                        <li><strong>2026/1(なる早)</strong>
+                            <ul>
+                                <li>新ヤマカンへの刷新・データ移行</li>
+                            </ul>
+                            <blockquote>現行ヤマカンにトラブル続出中（正直、限界...）のため早め対応が必要</blockquote>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 次回予告 -->
+                <div class="next-topic-box anim-item" data-anim="7">
+                    <p>次回<strong>名簿</strong>を整理させてください</p>
+                </div>
             </div>
         </div>
 
         <!-- 次へボタン（アニメーション用） -->
         <button class="next-anim-btn" id="nextAnimBtn" onclick="nextAnimItem()">次へ ▶</button>
 
-        <!-- スライド3: 名簿編 -->
+        <!-- ========================================
+             以下、名簿編・対応時期スライドはコメントアウト
+             ======================================== -->
+        <!--
         <div class="slide" data-slide="3">
             <div class="slide-content">
                 <div class="slide-header">
@@ -627,14 +664,12 @@
             </div>
         </div>
 
-        <!-- スライド4: 対応時期 -->
         <div class="slide" data-slide="4">
             <div class="slide-content">
                 <div class="slide-header">
                     <h2 class="slide-title">対応時期</h2>
                 </div>
 
-                <!-- 新ヤマカン タイムライン -->
                 <div class="timeline">
                     <div class="timeline-title">新ヤマカン</div>
                     <div class="timeline-track">
@@ -666,7 +701,6 @@
                     </div>
                 </div>
 
-                <!-- 名簿 タイムライン -->
                 <div class="timeline">
                     <div class="timeline-title">名簿</div>
                     <div class="timeline-track">
@@ -698,7 +732,6 @@
                     </div>
                 </div>
 
-                <!-- 詳細 -->
                 <div class="section">
                     <h3>詳細</h3>
                     <ul>
@@ -727,28 +760,23 @@
                 </div>
             </div>
         </div>
+        -->
 
         <!-- ページインジケーター -->
         <div class="page-indicator">
             <span class="dot active" onclick="goToSlide(1)"></span>
             <span class="dot" onclick="goToSlide(2)"></span>
-            <span class="dot" onclick="goToSlide(3)"></span>
-            <span class="dot" onclick="goToSlide(4)"></span>
         </div>
 
     </div>
 
     <script>
         let currentSlide = 1;
-        const totalSlides = 4;
+        const totalSlides = 2;
 
         // スライド2用
         let currentAnimItem2 = 0;
-        const totalAnimItems2 = 5;
-
-        // スライド3用
-        let currentAnimItem3 = 0;
-        const totalAnimItems3 = 6;
+        const totalAnimItems2 = 7;
 
         function updateSlide() {
             document.querySelectorAll('.slide').forEach(slide => slide.classList.remove('active'));
@@ -770,16 +798,6 @@
                 document.getElementById('nextAnimBtn').textContent = '次へ ▶';
                 updateNextBtnState();
             }
-            // スライド3の場合
-            else if (currentSlide === 3) {
-                resetAnimation3();
-                setTimeout(() => {
-                    nextAnimItem3();
-                }, 300);
-                document.getElementById('nextAnimBtn').classList.add('show');
-                document.getElementById('nextAnimBtn').textContent = '次へ ▶';
-                updateNextBtnState();
-            }
             else {
                 document.getElementById('nextAnimBtn').classList.remove('show');
                 document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
@@ -789,9 +807,9 @@
         function updateNextBtnState() {
             if (currentSlide === 2) {
                 document.getElementById('nextBtn').disabled = currentAnimItem2 < totalAnimItems2;
-            } else if (currentSlide === 3) {
-                // スライド3はアニメーション完了後に次へ進める
-                document.getElementById('nextBtn').disabled = currentAnimItem3 < totalAnimItems3;
+                if (currentAnimItem2 >= totalAnimItems2) {
+                    document.getElementById('nextAnimBtn').classList.remove('show');
+                }
             } else {
                 document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
             }
@@ -801,15 +819,6 @@
         function resetAnimation2() {
             currentAnimItem2 = 0;
             document.querySelectorAll('.anim-item').forEach(item => {
-                item.classList.remove('visible');
-            });
-
-        }
-
-        // スライド3用リセット
-        function resetAnimation3() {
-            currentAnimItem3 = 0;
-            document.querySelectorAll('.anim-item-3').forEach(item => {
                 item.classList.remove('visible');
             });
 
@@ -827,29 +836,8 @@
                 updateNextBtnState();
 
                 if (currentAnimItem2 >= totalAnimItems2) {
-                    document.getElementById('nextAnimBtn').textContent = '次のスライドへ ▶';
+                    document.getElementById('nextAnimBtn').textContent = '完了 ✓';
                 }
-            } else {
-                nextSlide();
-            }
-        }
-
-        // スライド3用アニメーション進行
-        function nextAnimItem3() {
-            if (currentAnimItem3 < totalAnimItems3) {
-                currentAnimItem3++;
-                const item = document.querySelector(`[data-anim-3="${currentAnimItem3}"]`);
-                if (item) {
-                    item.classList.add('visible');
-                }
-
-                updateNextBtnState();
-
-                if (currentAnimItem3 >= totalAnimItems3) {
-                    document.getElementById('nextAnimBtn').textContent = '次のスライドへ ▶';
-                }
-            } else {
-                nextSlide();
             }
         }
 
@@ -857,8 +845,6 @@
         function nextAnimItem() {
             if (currentSlide === 2) {
                 nextAnimItem2();
-            } else if (currentSlide === 3) {
-                nextAnimItem3();
             }
         }
 
@@ -885,8 +871,6 @@
             if (e.key === 'ArrowRight') {
                 if (currentSlide === 2 && currentAnimItem2 < totalAnimItems2) {
                     nextAnimItem2();
-                } else if (currentSlide === 3 && currentAnimItem3 < totalAnimItems3) {
-                    nextAnimItem3();
                 } else if (currentSlide < totalSlides) {
                     nextSlide();
                 }
@@ -896,9 +880,6 @@
                 if (currentSlide === 2 && currentAnimItem2 < totalAnimItems2) {
                     e.preventDefault();
                     nextAnimItem2();
-                } else if (currentSlide === 3 && currentAnimItem3 < totalAnimItems3) {
-                    e.preventDefault();
-                    nextAnimItem3();
                 }
             }
         });
@@ -911,17 +892,6 @@
             }
             if (currentAnimItem2 < totalAnimItems2) {
                 nextAnimItem2();
-            }
-        });
-
-        // スライド3をクリックしてもアニメーションを進める
-        document.querySelector('[data-slide="3"]').addEventListener('click', (e) => {
-            // リンクやボタンをクリックした場合は除外
-            if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('a') || e.target.closest('button')) {
-                return;
-            }
-            if (currentAnimItem3 < totalAnimItems3) {
-                nextAnimItem3();
             }
         });
 
