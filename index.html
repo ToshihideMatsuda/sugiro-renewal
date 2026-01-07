@@ -301,6 +301,54 @@
             pointer-events: auto;
         }
 
+        /* 閉鎖メッセージ用スタイル */
+        .closure-message {
+            text-align: center;
+            padding: 20px;
+            margin: 15px 0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .closure-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ff6b6b;
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid #ff6b6b;
+            width: 0;
+            animation: none;
+        }
+
+        .closure-text.animate {
+            animation: typing 2s steps(14) forwards, blink-caret 0.7s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 14ch;
+            }
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: #ff6b6b;
+            }
+        }
+
         /* スライド3用アニメーションスタイル */
         .anim-item-3 {
             opacity: 0;
@@ -502,7 +550,7 @@
                 </div>
 
                 <div class="section anim-item" data-anim="1">
-                    <h3>現行のヤマカンの欠点</h3>
+                    <h3>現ヤマカンの欠点</h3>
                     <ul>
                         <li>退会済みの会員が計画書を見れる
                             <ul>
@@ -510,11 +558,23 @@
 
                             </ul>
                         </li>
-                        <li>サーバも10年以上使ってかなり老朽化...お爺さん👴</li>
+                        <li>サーバも10数年使って老朽化...お爺さん👴
+                            <ul>
+                                <li>老朽化で一番リスクを抱えているのは太郎さん
+                                    <blockquote>諸経緯は省きますがこのことに気づいたのは11月末<br>杉山さんからHP係を引き継ぎ中 + ヤマカンのトラブル発生時です
+                                    </blockquote>
+                                    <blockquote>太郎さんに感謝と敬意を払いましょう。無事に杉並労山がやってこれたのは太郎さんのおかげです</blockquote>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
 
                 <div class="section anim-item" data-anim="2">
+                    <h4>専門家（SE）としてはこのまま<span style="color: red;">閉鎖</span>が妥当、と思っています</h4>
+                </div>
+
+                <div class="section anim-item" data-anim="3">
                     <h3>解決のために</h3>
                     <ul>
                         <li>ホームページ（WordPress）のユーザを活用
@@ -527,21 +587,21 @@
                     </ul>
                 </div>
 
-                <div class="section anim-item" data-anim="3">
+                <div class="section anim-item" data-anim="4">
                     <h3>でも、操作性が違うと使いづらい...</h3>
                 </div>
 
-                <div class="section anim-item" data-anim="4">
+                <div class="section anim-item" data-anim="5">
                     <ul>
                         <li>ご安心ください！<strong>同じ画面</strong>にしました！操作は全く同じです。</li>
-                        <li>太郎さん（現ヤマカン管理者）と連携してデータ移行テスト中！<br>2万件の計画書データ移行を予定</li>
+                        <li>太郎さんと連携してデータ移行中！2万件の計画書データ移行を予定</li>
                     </ul>
                     <a href="https://sugiro.info/mp//計画書一覧/?mode=yamakan" class="link-button" target="_blank">
-                        計画書一覧（yamakan mode）→
+                        新ヤマカン（yamakan mode）→
                     </a>
                 </div>
 
-                <div class="section anim-item" data-anim="5">
+                <div class="section anim-item" data-anim="6">
                     <h3>新ヤマカンにすると他にもいいことあり</h3>
                     <ul>
                         <li>全員へのパスワード配布不要（個人管理）</li>
@@ -555,22 +615,17 @@
                 </div>
 
                 <!-- 詳細 -->
-                <div class="section anim-item" data-anim="6">
+                <div class="section anim-item" data-anim="7">
                     <h3>対応時期</h3>
                     <ul>
                         <li><strong>2026/1(なる早)</strong>
                             <ul>
                                 <li>新ヤマカンへの刷新・データ移行</li>
                             </ul>
-                            <blockquote>現行ヤマカンにトラブル続出中（正直、限界...）のため早め対応が必要</blockquote>
                         </li>
                     </ul>
                 </div>
 
-                <!-- 次回予告 -->
-                <div class="next-topic-box anim-item" data-anim="7">
-                    <p>次回<strong>名簿</strong>を整理させてください</p>
-                </div>
             </div>
         </div>
 
