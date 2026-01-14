@@ -520,23 +520,16 @@
 <body>
     <div class="slides-container">
 
-        <!-- 左矢印ボタン -->
-        <button class="arrow-btn prev" id="prevBtn" onclick="prevSlide()">◀</button>
-
-        <!-- 右矢印ボタン -->
-        <button class="arrow-btn next" id="nextBtn" onclick="nextSlide()">▶</button>
-
         <!-- スライド1: タイトル -->
         <div class="slide active" data-slide="1">
             <div class="slide-content">
                 <div class="slide-header">
-                    <h1 class="slide-title">新HPに向けて</h1>
-                    <p class="slide-subtitle">杉並勤労者山岳会 ホームページリニューアル計画</p>
-                    <p style="font-size: 0.75rem; color: #aaaaaa; margin-top: 10px;">HP/名簿係（代理） 松田敏秀</p>
+                    <p class="slide-title">杉並勤労者山岳会<br>ホームページリニューアル計画</p>
+                    <p style="color: #aaaaaa; margin-top: 10px;">HP係/名簿係 松田敏秀</p>
                 </div>
                 <div class="toc-buttons">
                     <a class="toc-btn" onclick="goToSlide(2)">
-                        <span class="toc-btn-text">ヤマカン編</span>
+                        <span class="toc-btn-text">ヤマカンについて</span>
                     </a>
                 </div>
             </div>
@@ -612,202 +605,64 @@
                     <ul>
                         <li><strong>2026/1(なる早)</strong>
                             <ul>
-                                <li>新ヤマカンへの刷新・データ移行・ホームページの切り替え</li>
+                                <li>新ヤマカンの公開
+                                    <blockquote>ヤマカンへのリンクに新旧の分岐ページを入れる<br>
+                                        2026/6/1以降の開始日の計画は新ヤマカンで提出という案内</blockquote>
+                                </li>
+                                <li>データ移行
+                                    <blockquote>公開と前後するが後日でもデータ移行は行う<br>
+                                        テストデータ22000件では正常動作を確認済み</blockquote>
+                                </li>
+                                <li>
+                                    メールでの告知（適宜）
+                                </li>
                             </ul>
                         </li>
+                        <li><strong>2026/5</strong>
+                            <ul>
+                                <li>総会での告知</li>
+                            </ul>
+                        </li>
+                        <li><strong>2026/6</strong>
+                            <ul>新ヤマカンを正式版に変更</ul>
+                            <ul>現ヤマカンへのリンクは正式になくす</ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="section anim-item" data-anim="7">
+                    <h3>その他</h3>
+                    <ul>
+                        <li>
+                            杉山さんに個人契約していただいているXServerアカウントを松田に譲渡する予定(杉山さん申請書作成中)
+                        </li>
+                        <li>
+                            <strong>これを機に杉山さんはHP係の管理アカウントを外れてもらう。<br>運営委員会の決定事項（絶対議事に残して！！！）</strong>
+                            <blockquote> 責任の明確化、松田の負荷の低減 </blockquote>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            テスト用サイトは順次削除し本体サイトでの運用をします。
+                            <ul>https://sugiro.info/m/xxx
+                                <blockquote> 旧テストサイト、削除済み</blockquote>
+                            </ul>
+                            <ul>https://sugiro.info/mp/xxx
+                                <blockquote> 新テストサイト、削除予定</blockquote>
+                            </ul>
+                            <ul>https://sugiro.info/xxx
+                                <blockquote> 本体サイトに全て集約</blockquote>
+                            </ul>
+                        </li>
+                        <li>名簿係は誰か変わってほしい...
+                            <blockquote>excel編集、webで登録、メールで告知、ぐらいの簡単手順にします</blockquote>
+                        </li>
+                        <li>山行部はもっと変わって欲しい...2026年も裏方しかできなさそう...</li>
                     </ul>
                 </div>
 
             </div>
         </div>
-
-        <!-- 次へボタン（アニメーション用） -->
-        <button class="next-anim-btn" id="nextAnimBtn" onclick="nextAnimItem()">次へ ▶</button>
-
-        <!-- ========================================
-             以下、名簿編・対応時期スライドはコメントアウト
-             ======================================== -->
-        <!--
-        <div class="slide" data-slide="3">
-            <div class="slide-content">
-                <div class="slide-header">
-                    <h2 class="slide-title">名簿編</h2>
-                </div>
-
-                <div class="section anim-item-3" data-anim-3="1">
-                    <h3>そもそも名簿ってなぜ必要？</h3>
-                    <ul>
-                        <li><strong>通常時:</strong> 計画書作成のため</li>
-                        <li><strong>事故時:</strong> 基金・警察・家族対応のため</li>
-                    </ul>
-                </div>
-
-                <div class="section anim-item-3" data-anim-3="2">
-                    <h3>現在どんな管理</h3>
-                    <ul>
-                        <li><strong>通常時:</strong> 計画書作成のため
-                            <ul>
-                                <li><a href="https://www.sugiro.info/会員名簿/" target="_blank">会員名簿ページ</a>
-                                    <blockquote>後述のExcelの1シートのコピペ。誰でもできます。</blockquote>
-                                </li>
-                                <li><a href="https://sugiro.info/mp/会員名簿/" target="_blank">テスト用会員名簿ページ</a><span
-                                        class="note">（杉山さん作ver）</span></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="section anim-item-3" data-anim-3="3">
-                    <ul>
-                        <li><strong>事故時:</strong> 基金・警察・家族対応のため
-                            <ul>
-                                <li>Excel版の名簿<blockquote>現在は松田管理</blockquote>
-                                </li>
-                                <li><a href="https://sugiro.info/mp/管理用名簿一覧/" target="_blank">管理用名簿一覧ページ</a><span
-                                        class="note">（杉山さん作ver）</span>
-                                    <blockquote>アクセス可能: 小野、羽田、安江、後藤、小谷、岸田、新津、杉山、松田</blockquote>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="anim-item-3" data-anim-3="4">
-                    <div class="box"><span class="note">📢 松田の叫び</span><br>4つも同じようなものが存在🤯。カオス。。。無理ぽ</div>
-                </div>
-
-                <div class="section anim-item-3" data-anim-3="5">
-                    <h3>新HPでは</h3>
-
-                    <ul>
-                        <li><strong>削除:</strong> 杉山さん作の2つ
-                            <ul>
-                                <li>テスト用会員名簿ページ</li>
-                                <li>管理用名簿一覧ページ</li>
-                            </ul>
-                        </li>
-                        <li><strong>新機能:</strong> Excel版の名簿のアップロード・ダウンロード機能
-                            <ul>
-                                <li>アップロード: 名簿係のみ実行可能</li>
-                                <li>ダウンロード: 該当の係（現在9名）のみ</li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                </div>
-
-                <div class="anim-item-3" data-anim-3="6">
-                    <div class="box">
-                        <span class="note">📢 松田の叫び</span><br>
-                        完成したら名簿係は誰かに渡したい！<br>
-                        やることは<br>
-                        ・Excel更新<br>
-                        ・Excelアップロード<br>
-                        ・<a href="https://www.sugiro.info/会員名簿/" target="_blank">会員名簿ページ</a>の更新（Excelのコピペ）<br>
-                        だけ<br>
-                        簡単なPC操作ができたら誰でもできます！フォローします！
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="slide" data-slide="4">
-            <div class="slide-content">
-                <div class="slide-header">
-                    <h2 class="slide-title">対応時期</h2>
-                </div>
-
-                <div class="timeline">
-                    <div class="timeline-title">新ヤマカン</div>
-                    <div class="timeline-track">
-                        <div class="milestone">
-                            <div class="milestone-dot"></div>
-                            <div class="milestone-date">2026/1月</div>
-                            <div class="milestone-label">テストサイト刷新</div>
-                        </div>
-                        <div class="milestone">
-                            <div class="milestone-dot"></div>
-                            <div class="milestone-date">2026/1-4月</div>
-                            <div class="milestone-label">テスト運用</div>
-                        </div>
-                        <div class="milestone">
-                            <div class="milestone-dot highlight"></div>
-                            <div class="milestone-date">2026/5月</div>
-                            <div class="milestone-label">総会決議</div>
-                        </div>
-                        <div class="milestone">
-                            <div class="milestone-dot"></div>
-                            <div class="milestone-date">2026/6月〜</div>
-                            <div class="milestone-label">正式版変更</div>
-                        </div>
-                        <div class="milestone">
-                            <div class="milestone-dot"></div>
-                            <div class="milestone-date">2026/年末？</div>
-                            <div class="milestone-label">旧版廃止</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline">
-                    <div class="timeline-title">名簿</div>
-                    <div class="timeline-track">
-                        <div class="milestone">
-                            <div class="milestone-dot" style="opacity: 0;"></div>
-                            <div class="milestone-date" style="opacity: 0;">2026/1月</div>
-                            <div class="milestone-label" style="opacity: 0;"></div>
-                        </div>
-                        <div class="milestone">
-                            <div class="milestone-dot"></div>
-                            <div class="milestone-date">2026/1-4月</div>
-                            <div class="milestone-label">機能実装・テストサイト削除</div>
-                        </div>
-                        <div class="milestone">
-                            <div class="milestone-dot highlight"></div>
-                            <div class="milestone-date">2026/5月</div>
-                            <div class="milestone-label">名簿係選任</div>
-                        </div>
-                        <div class="milestone">
-                            <div class="milestone-dot" style="opacity: 0;"></div>
-                            <div class="milestone-date" style="opacity: 0;">2026/6月〜</div>
-                            <div class="milestone-label" style="opacity: 0;">-</div>
-                        </div>
-                        <div class="milestone">
-                            <div class="milestone-dot" style="opacity: 0;"></div>
-                            <div class="milestone-date" style="opacity: 0;">2026/年末</div>
-                            <div class="milestone-label" style="opacity: 0;">-</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h3>詳細</h3>
-                    <ul>
-                        <li><strong>2026/1(なる早)</strong>
-                            <ul>
-                                <li>計画書テストサイトの刷新(削除・新作成)</li>
-                            </ul>
-                            <blockquote>HP係の裁量で進めていいという認識</blockquote>
-                        </li>
-                        <li><strong>2026/1-4:</strong>
-                            <ul>
-                                <li>ヤマカンレイアウトのテスト運用</li>
-                                <blockquote>HP係および会員に協力要請</blockquote>
-                                <li>Excel版名簿のアップロード・ダウンロード機能実装<br>名簿テストサイトの削除</li>
-                                <blockquote>HP係/名簿係の裁量で進めていいという認識</blockquote>
-                            </ul>
-                        </li>
-                        <li><strong>2026/5:</strong> 総会にて決議（新ヤマカン採用・名簿係選任）</li>
-                        <li><strong>2026/6以降:</strong> 新ヤマカンを正式版に変更
-                            <blockquote>混乱防止のため3〜6ヶ月は旧版リンクを残す</blockquote>
-                        </li>
-                        <li><strong>2026年末:</strong> 現行ヤマカンへのリンクも廃止
-                            <blockquote>現行ヤマカンの扱いは要検討（できればデータは残したい）</blockquote>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        -->
 
         <!-- ページインジケーター -->
         <div class="page-indicator">
@@ -892,20 +747,6 @@
         function nextAnimItem() {
             if (currentSlide === 2) {
                 nextAnimItem2();
-            }
-        }
-
-        function nextSlide() {
-            if (currentSlide < totalSlides) {
-                currentSlide++;
-                updateSlide();
-            }
-        }
-
-        function prevSlide() {
-            if (currentSlide > 1) {
-                currentSlide--;
-                updateSlide();
             }
         }
 
